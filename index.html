@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SabinoShoes - Loja de Calçado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="logo2.png" alt="SabinoShoes Logo" class="logo-img">
+            <nav>
+                <button class="cart-btn" onclick="toggleCart()">
+                    🛒 Carrinho (<span id="cart-count">0</span>)
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="search-section">
+            <input type="text" id="search-input" placeholder="Pesquisar sapatos..." oninput="searchProducts()">
+        </section>
+
+        <section id="products-grid" class="products-grid">
+        </section>
+    </main>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button onclick="toggleCart()" class="close-cart">&times;</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: €<span id="cart-total">0.00</span></strong>
+            </div>
+            <div class="cart-phone">
+                <label for="customer-phone">Seu número (para MB WAY):</label>
+                <input type="tel" id="customer-phone" placeholder="961234567" pattern="9[1236][0-9]{7}">
+            </div>
+            <button onclick="checkoutWhatsApp()" class="checkout-btn">Finalizar via WhatsApp</button>
+            <button onclick="clearCart()" class="clear-cart-btn">Limpar Carrinho</button>
+        </div>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SabinoShoes - Todos os direitos reservados</p>
+            <p>Contacto: <a href="https://wa.me/351961234567" target="_blank">WhatsApp</a> | Pagamentos via MB WAY</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
